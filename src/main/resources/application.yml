@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:./data/meta.db
+    username:
+    password:
+mybatis:
+  mapper-locations: classpath:mapper/**Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
