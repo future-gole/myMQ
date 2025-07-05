@@ -106,7 +106,7 @@ public class ConsumerManager {
                 log.info("[ConsumerManager] 消费消息成功，queueName:{}",queue.getName());
                 //不是自动应答的话由消费者调用basicAck来调用
             }catch (IOException | MqException | ClassNotFoundException e) {
-                ///如果在中间有异常抛出可能会导致后面的消息无法被易错，参考rabbmtmq的死信队列实现
+                //todo 如果在中间有异常抛出可能会导致后面的消息无法被易错，需要参考rabbitmq的死信队列实现
                 log.error("[ConsumerManager] 消费信息出错， error:{} ", e.getMessage());
             }
         });

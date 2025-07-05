@@ -20,7 +20,7 @@ import java.util.concurrent.Executors;
  */
 @Slf4j
 public class BrokerServer {
-    //socker
+    //socket
     private ServerSocket serverSocket = null;
     //virtualHost,当前只考虑有一个虚拟主机
     private VirtualHost virtualHost = new VirtualHost("default");

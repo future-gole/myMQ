@@ -20,7 +20,7 @@ public class Message implements Serializable {
     private transient long offsetBeg = 0;//消息数据的开头距离文件开头的偏移量（字节）闭
     private transient long offsetEnd = 0;//消息数据的结尾距离文件开头的偏移量（字节）开
 
-    //表示改消息在文件中是否有效，0x1 有效 0x0 无效
+    //表示该消息在文件中是否有效，0x1 有效 0x0 无效
     private byte isValid = 0x1;
 
     //创建一个方法工厂，让方法工厂封装创建message的过程

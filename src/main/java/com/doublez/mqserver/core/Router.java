@@ -116,7 +116,7 @@ public class Router {
         }
     }
 
-    // 通过 DP 的方式重新实现这个方法. 实现思路参考 "动态规划精品课" 里的 "44.两个数组的 dp 问题_通配符匹配_Java"
+    // 通过 DP 的方式重新实现这个方法
     //todo 自己写一遍
     private boolean routeTopic(Binding binding, Message message) {
         // 按照 . 来切分 binding key 和 routing key
@@ -145,7 +145,6 @@ public class Router {
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
                 if (bindingTokens[j - 1].equals("#")) {
-                    // 这块的状态转移方程推导过程很复杂. 参考算法视频讲解
                     dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
                 } else if (bindingTokens[j - 1].equals("*")) {
                     // 如果 bindingTokens j 位置为 *, 那么 bindingTokens j - 1 位置和 routingKey i - 1 位置匹配即可.
